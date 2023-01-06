@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.litongjava</groupId>
+  <artifactId>maven-screw-gen-db-doc</artifactId>
+  <version>1.0</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>cn.smallbun.screw</groupId>
+        <artifactId>screw-maven-plugin</artifactId>
+        <version>1.0.3</version>
+        <dependencies>
+          <!-- HikariCP -->
+          <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
+          </dependency>
+          <!--mysql driver -->
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.20</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <!--driver -->
+          <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+          <!--jdbc url -->
+          <jdbcUrl>jdbc:mysql://192.168.3.9:3306/test?serverTimezone=UTC</jdbcUrl>
+          <!--username -->
+          <username>root</username>
+          <!--password -->
+          <password>root</password>
+          <!--生成文件类型,支持 WORD,HTML,MD-->
+          <fileType>WORD</fileType>
+          <!--打开文件输出目录 -->
+          <openOutputDir>false</openOutputDir>
+          <!--生成模板 -->
+          <produceType>freemarker</produceType>
+          <!--文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称 -->
+          <!--<docName>测试文档名称</docName> -->
+          <!--描述 -->
+          <description>数据库说明书</description>
+          <!--版本 -->
+          <version>1.0.0</version>
+          <!--标题 -->
+          <title>数据库说明书</title>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
