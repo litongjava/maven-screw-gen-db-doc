@@ -57,5 +57,5 @@ cd E:\code\java\project-ppnt\maven-screw-gen-db-doc
 mvnd screw:run
 ```
 
-
+命令执行执行完成后会在doc目录下生成一个数据库文档的文件
 
