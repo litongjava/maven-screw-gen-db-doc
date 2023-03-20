@@ -28,18 +28,24 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.20</version>
           </dependency>
+
+          <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>21.5.0.0</version>
+          </dependency>
         </dependencies>
         <configuration>
           <!--driver -->
-          <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+          <driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
           <!--jdbc url -->
-          <jdbcUrl>jdbc:mysql://192.168.3.9:3306/test?serverTimezone=UTC</jdbcUrl>
+          <jdbcUrl>jdbc:oracle:thin:@192.168.3.9:1521/XE</jdbcUrl>
           <!--username -->
-          <username>root</username>
+          <username>JGWNEW</username>
           <!--password -->
-          <password>root</password>
+          <password>JGWNEW</password>
           <!--生成文件类型,支持 WORD,HTML,MD-->
-          <fileType>WORD</fileType>
+          <fileType>MD</fileType>
           <!--打开文件输出目录 -->
           <openOutputDir>false</openOutputDir>
           <!--生成模板 -->
